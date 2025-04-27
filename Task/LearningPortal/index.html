@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <header>
+        <img src="./images/Syncfusion.png" alt="SyncfusionLogo" />
+        <p id="name">Library Portal</p>
+        <p id="tab">Books</p>
+      </header>
+      <main>
+        <form onsubmit="display()" id="form">
+          <legend>Add new Book</legend> <br>
+          <div class="input">
+            <label for="category">Category</label>
+            <select name="category" id="category" required>
+              <option value="IT" selected>IT</option>
+              <option value="Management">Management</option>
+              <option value="Science">Science</option>
+              <option value="Arts">Arts</option>
+            </select>
+          </div>
+          <div class="input">
+            <label for="book_name">Book</label>
+            <input type="text" id="book_name" onblur="validateBookName()"/>
+          </div>
+          <p class="error" id="bookName_error"></p>
+
+          <div class="input">
+            <label for="email_id">Author Email</label>
+            <input type="email" id="email_id" onblur="validateEmail()" />
+          </div>
+          <p class="error" id="email_error"></p>
+
+          <div class="input">
+            <label for="author_name">Author Name</label>
+            <input type="text" id="author_name" onblur="validateAuthorName()"/>
+          </div>
+          <p class="error" id="author_error"></p>
+
+          <div class="input">
+            <label for="year">Published Year</label>
+            <input type="number" id="year" onblur="validateYear()"/>
+          </div>
+          <p class="error" id="year_error"></p>
+
+          <div class="input">
+            <label for="price">Price</label>
+            <input type="text"  id="price" onblur="validatePrice()">
+          </div>
+          <p class="error" id="price_error"></p>
+
+          <div class="buttons">
+            <button type="submit" id="save">Save</button>
+            <button type="reset">Cancel</button>
+            <button type="button" onclick="display()">Show</button>
+          </div>
+          
+        </form>
+        
+        <div id="info" >
+          <!-- <br><br> -->
+        </div>
+      </main>
+      <footer>
+        <p>Copyright @ 2019-present Syncfusion</p>
+      </footer>
+    </div>
+    <script src="src.js"></script>
+
+  </body>
+</html>

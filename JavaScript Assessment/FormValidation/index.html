@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registration</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>User Registration</h1>
+
+    <form onsubmit="formValidate(event)" id="myForm">
+        <label for="name">Name: </label>
+        <input type="text" id="first-name" placeholder="FirstName" onblur="validateFirstName()">
+        <input type="text" id="last-name" placeholder="LastName" onblur="validateLastName()"> <br>
+        <p class="error" id="firstnameError" style="display: inline;"></p>
+        <p class="error" id="lastnameError" style="display: inline;"></p><br>
+        <label for=" ">Contact: </label>
+        <input type="email" id="email" placeholder="email" onblur="validateEmail()">
+        <input type="tel" id="phoneNumber" placeholder="phone Number" onblur="validatePhone()"> <br>
+        <p class="error" id="emailError" style="display: inline;"></p>
+        <p class="error" id="phoneError" style="display: inline;"></p> <br>
+        <label for="password">Password: </label>
+        <input type="password" placeholder="password" id="password" onblur="validatePassword()">
+        <input type="password" placeholder="Confirm Password" id="confirmPwd" onblur="validConfirmPassword()"><br>
+        <p class="error" id="pwdError" style="display: inline;"></p>
+        <p class="error" id="cpwdError" style="display: inline;"></p><br><br>
+        <label for="Gender">Gender: </label>
+        <p class="error" id="genderError"></p>
+        <input type="radio" name="gender"   value="Male" onchange="validateGender()"><label for="male" >Male</label>
+        <input type="radio" name="gender"  value="Female" onchange="validateGender()"><label for="female">Female</label>
+        <input type="radio" name="gender"  value="Others" onchange="validateGender()"><label for="others">Others</label>
+
+        <address style="display: flex;">
+            <div class="present" style="font-style: normal; margin-right: 50px;" >
+                <label for="presentAddress">Present Address: </label><br>
+                <textarea id="presentAddress" rows="8" cols="30" onblur="validateAddress()"></textarea>
+                <p class="error" id="addressError"></p>
+                <label for="pincode">Pincode: </label><br>
+                <input type="text" id="pincode" onblur="validatePresentPincode()">
+                <p class="error" id="pincodeError"></p>
+                <label for="state">State:</label> <br>
+                <select id="state" onblur="validateState()">
+                    <option value="">Select State</option>
+                    <option value="TamilNadu">TamilNadu</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                </select>
+                <p id="stateError" class="error"></p>
+            </div>
+
+            <div class="Permanent" style="font-style: normal;">
+                <label for="PermanentAddress">Permanent Address: </label> <input type="checkbox" id="same" onclick="copy(event)">Same as present address<br>
+                <textarea id="PermanentAddress" rows="8" cols="30" onblur="validatePermanentAddress()"></textarea>
+                <p id="addressError2" class="error"></p>
+                <label for="permanentPincode">Pincode: </label><br>
+                <input type="text" id="permanentPincode" onblur="validatePermanentPincode()">
+                <p id="pincodeError2" class="error"></p>
+                <label for="permanentState">State:</label> <br>
+                <select id="permanentState" onblur="validatePermanentState()">
+                    <option value="">Select State</option>
+                    <option value="TamilNadu">TamilNadu</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                </select>
+                <p id="stateError2" class="error"></p>
+            </div>
+        </address>
+
+        <div class="birth" style="display: flex;">
+            <div class="DateOfBirth" style="margin-right: 160px;">
+                <label for="dob">Date Of Birth:</label><br>
+                <input type="date" id="dob" onblur="validateDOB()"></input>
+                <p id="dobError" class="error"></p>
+            </div>
+            <div class="time">
+                <label for="birthtime">Birth Time: </label><br>
+                <input type="time" id="birthtime" onblur="validateTime()">
+                <p id="timeError" class="error"></p>
+            </div>
+        </div>
+
+        <div class="extra">
+            <div class="languages">
+                <label for="languages">Languages: </label><br>
+                <input type="checkbox" name="language" id="Tamil" onchange="validateLanguages()" value="Tamil"><label for="Tamil" >Tamil</label> <br>
+                <input type="checkbox" name="language" id="English" onchange="validateLanguages()" value="English"><label for="English" >English</label> <br>
+                <input type="checkbox" name="language" id="French" onchange="validateLanguages()" value="French"><label for="French" >French</label><br>
+                <p id="languagesError" class="error"></p>
+            </div>
+            <div class="interest">
+                <label for="interest">Select your field interest:</label> <br>
+                <select id="interest" multiple onblur="validateInterest()">
+                    <option value="Music">Music</option>
+                    <option value="Singing">Singing</option>
+                    <option value="Dancing">Dancing</option>
+                </select>
+                <p id="interestError" class="error"></p>
+            </div>
+        </div>
+
+        <div class="files" style="display: flex;">
+            <div class="photo">
+                <label for="photo">Upload your photo</label>
+                <input type="file" id="photo" accept="image/*" onchange="validatePhoto()">
+                <p id="photoError" class="error"></p>
+            </div>
+            <div class="resume">
+                <label for="resume">Upload your resume</label>
+                <input type="file" id="resume" accept=".pdf" onchange="validateResume()">
+                <p id="fileError" class="error"></p>
+            </div>
+        </div>
+
+        <button type="submit" id="mySubmit"> Submit</button>
+        <button type="button" onclick="newForm()">Reset</button>
+    </form>
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Mail</th>
+                <th>phoneNumber</th>
+                <th>Password</th>
+                <th>Gender</th>
+                <th>presentAddress</th>
+                <th>presentAddress pincode</th>
+                <th>presentAddress state</th>
+                <th>PermanentAddress</th>
+                <th>PermanentAddress pincode</th>
+                <th>PermanentAddress state</th>
+                <th>DateOfBirth</th>
+                <th>BirthTime</th>
+                <th>Languages Known</th>
+                <th>interest</th>
+                <th>Photo</th>
+                <th>Resume</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+        
+    </table>
+
+    <div id="buttons">
+        <button type="button" onclick="newForm()">Add New User</button>
+        <button type="button" onclick="back()">Back</button>
+    </div>
+    </body>
+    <script src="./src.js"></script>
+</body>
+
+</html>

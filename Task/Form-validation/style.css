@@ -1,0 +1,35 @@
+body{
+    width: 70%;
+    margin: auto;
+    display: block;
+    justify-content: right;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+span{
+    color: red;
+}
+.name{
+    display: flex;
+    gap: 5rem;
+}
+input{
+    padding: 10px;
+}
+#name, #fatherName{
+    width:25rem;
+}
+form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.info{
+    display: flex;
+}
+

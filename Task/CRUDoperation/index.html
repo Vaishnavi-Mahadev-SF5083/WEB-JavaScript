@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <main>
+        <form onsubmit=" formValidate(event)" id="form">
+            <div class="input">
+                <label for="myname">Name: </label>
+                <input type="text" id="myName" onblur="validateName()">
+            </div>
+            <p class="error" id="name_error"></p>
+            <div class="input">
+                <label for="fatherName">Father Name: </label>
+                <input type="text" id="fatherName" onblur="validateFatherName()">
+            </div>
+            <p class="error" id="fatherName_error"></p>
+            <div class="input" >
+                <label for="gender">gender: </label>
+                <select id="gender" required>
+                    <option value="">Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div class="input">
+                <label for="phone">Phone: </label>
+                <input type="tel" id="phone" onblur="validatePhone()">
+            </div>
+            <p class="error" id="phone_error"></p>
+
+            <div class="input">
+                <label for="languages">Languages: </label>
+                <select id="languages" size="4"  multiple required>
+                    <option value="English">English</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="French">French</option>
+                </select>
+            </div>
+            <div class="input">
+                <label for="dob">Date: </label>
+                <input type="date" id="dob" required>
+            </div>
+            <div class="input">
+                <label for="photo">File: </label>
+                <input type="file" accept="image/*" id="photo" >
+            </div>
+            <div class="input">
+                <label for="balance">Balance: </label>
+                <input type="number" id="balance" onblur="validateBalance()">
+
+            </div>
+            <p class="error" id="balance_error"></p>
+            <button id="submitButton" type="submit">Add</button>
+        </form>
+        <br><br>
+        <table id="dataTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Father Name</th>
+                <th>Gender</th>
+                <th>Phone</th>
+                <th>Languages</th>
+                <th>DOB</th>
+                <th>Photo</th>
+                <th>Balance</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Table data will be inserted here -->
+            </tbody>
+          </table>
+    </main>
+    <script src="./src.js"></script>
+</body>
+
+</html>

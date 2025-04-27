@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  height: 100vh;
+  width: 100%;
+  background-color: cyan;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .calculator {
+  background-color: black;
+  padding: 20px;
+  border-radius: 15px;
+}
+.main .calculator #display {
+  width: 100%;
+  height: 40px;
+  padding: 15px;
+  font-size: 18px;
+  text-align: right;
+  border: none;
+  margin: 15px 0;
+}
+.main .calculator .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main .calculator .buttons .buttonrow {
+  display: flex;
+  justify-content: space-between;
+}
+.main .calculator .buttons .buttonrow button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 15px 0;
+  font-size: 18px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #e0dbdb;
+  transition: background ease;
+  box-shadow: 0 0 px #faf7f7;
+}
+.main .calculator .buttons .buttonrow button.clear {
+  background-color: red;
+  color: #fff;
+}
+.main .calculator .buttons .buttonrow button.equals {
+  background-color: orangered;
+  width: 100%;
+  color: #fff;
+}/*# sourceMappingURL=main.css.map */
