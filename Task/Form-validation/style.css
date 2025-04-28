@@ -1,0 +1,56 @@
+body{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: center;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+    text-align: center;
+}
+span{
+    color: red;
+}
+.name{
+    display: flex;
+    gap: 5rem;
+}
+input{
+    padding: 10px;
+}
+#name, #fatherName{
+    width:25rem;
+}
+form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.info{
+    display: flex;
+}
+#display{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+#display h3, #display p{
+    display: inline-block;
+}
+#display p img{
+    vertical-align: middle;
+}
+button{
+    padding: 5px;
+    width: 10rem;
+    font-size: 18px;
+    margin: auto;
+}
+
+

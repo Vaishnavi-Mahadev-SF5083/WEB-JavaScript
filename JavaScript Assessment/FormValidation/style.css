@@ -1,0 +1,46 @@
+* {
+    margin: 2px;
+    padding: 0;
+    box-sizing: border-box;
+}
+input {
+  padding: 8px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  vertical-align: top;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+img {
+  max-width: 60px;
+  height: auto;
+}
+.error{
+  color: red;
+}
+#buttons{
+  display: flex;
+  justify-content: center;
+  align-items:  center;
+  margin: 1rem auto;
+  width: 50%;
+}
+#buttons button{
+  padding: 10px;
+}
+
+form button{
+  padding: 10px;
+}

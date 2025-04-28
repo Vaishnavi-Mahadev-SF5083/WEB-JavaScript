@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to objects</title>
+    <script type="text/javascript">
+        // ! on click even and get element by ID
+        //   function buttonclick() {
+        //     var str = document.getElementById("heading1").innerHTML;
+        //     // alert("Button clicked");
+        //     alert(str);
+        //   }
+
+        // ! getElementsByTagName
+        // function onChanging()
+        // {
+        //     var para=document.getElementsByTagName('p');
+        //     para[0].style.fontSize='29px';
+        //     para[1].style.color='red';
+        //     para[2].style.fontWeight='bold'
+        //     para[3].style.fontStyle='italic'
+        // }
+
+        // ! getElementsByClassName
+        //   function changeStyling() {
+        //     var elements = document.getElementsByClassName("myPara");
+        //     for (var x = 0; x < elements.length; x++) {
+        //       elements[x].style.color = "red";
+        //     }
+        //   }
+
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.forEach((value,index,arr)=>{
+            console.log(arr[index])
+        })
+        
+    </script>
+</head>
+
+<body>
+    <!-- <button onclick="buttonclick()">Click Me</button>
+    <h1 id="heading1">Some Random text</h1> -->
+
+    <!-- getElementsByTagName -->
+    <!-- <p>para 1</p>
+    <p>para 2</p>
+    <p>para 3</p>
+    <p>para 4</p>
+    <p>para 5</p>
+
+    <button onclick="onChanging()">Clickme</button> -->
+
+    <!-- getElementsByClassName -->
+    <p id="p1" class="myPara">This is paragraph-1</p>
+    <p>This is paragraph-2</p>
+    <p class="myPara">This is paragraph-3</p>
+    <p>This is paragraph-4</p>
+    <p class="myPara">This is paragraph-5</p>
+    <a href="#">This is anchor tag</a>
+    <button onclick="changeStyling()">Clickme</button>
+</body>
+
+</html>

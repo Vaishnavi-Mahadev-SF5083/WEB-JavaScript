@@ -1,0 +1,67 @@
+@import './config';
+.main{
+    height: 100vh;
+    width: 100%;
+    background-color: $primary-color;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+
+    .calculator{
+        background-color: $secondry-color;
+        padding: 20px;
+        border-radius: 15px;
+
+        #display{
+            width: 100%;
+            height: 40px;
+            padding: 15px;
+            font-size: 18px;
+            text-align: right;
+            border: none;
+            margin: 15px 0;
+            
+        }
+        .buttons{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .buttonrow{
+                display: flex;
+                justify-content: space-between;
+
+                button{
+                    flex: 1;
+                    margin: 0 5px;
+                    padding: 15px 0;
+                    font-size: 18px;
+                    border: none;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    background-color: $gray;
+                    transition: background ease;
+                    box-shadow:  0 0 px #faf7f7;
+
+                    &.clear{
+                        background-color: red;
+                        color: #fff;
+                    }
+
+                    &.equals{
+                        background-color:orangered;
+                        width: 100%;
+                        color: #fff;
+                    }
+
+                }
+               
+            }
+        }
+    }
+
+
+
+
+
+}
