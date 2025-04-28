@@ -1,13 +1,15 @@
 body{
     width: 70%;
     margin: auto;
-    display: block;
+    display: flex;
+    flex-direction: column;
     justify-content: right;
+    align-items: center;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-h1{
+h2{
     text-align: center;
 }
 span{
@@ -32,4 +34,23 @@ form
 .info{
     display: flex;
 }
+#display{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+#display h3, #display p{
+    display: inline-block;
+}
+#display p img{
+    vertical-align: middle;
+}
+button{
+    padding: 5px;
+    width: 10rem;
+    font-size: 18px;
+    margin: auto;
+}
+
 

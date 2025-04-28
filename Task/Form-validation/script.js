@@ -19,6 +19,8 @@ const state2Input = document.getElementById("state2");
 const pincode1Input = document.getElementById("pincode");
 const pincode2Input = document.getElementById("pincode2");
 const photoInput = document.getElementById("photo");
+const displayDiv = document.getElementById("display");
+displayDiv.style.display="none"
 
 const nameError = document.getElementById("nameError");
 const fatherNameError = document.getElementById("fatherNameError");
@@ -242,9 +244,53 @@ copy=()=>{
     }
 }
 
+
+
 validateForm= async(event)=>{
     if(validateName() && validateFatherName() && validateEmail() && validateDOB() && validatePhone() && validateAddress() && validateAddress2() && validateCity1() && validateCity2() && validatestate1() && validatestate2() && validatePincode() && validatePincode2() && validatePhoto())
     {
+      event.preventDefault();
+      displayDiv.style.display="block"
+      document.getElementById("form").style.display="none"
+      var PresentAddress= `${address1Input.value} ${addressl1Input.value}, ${city1Input.value}, ${state1Input.value}, ${pincode1Input.value} `
+      var permanentAddress= `${address2Input.value} ${addressl2Input.value}, ${city2Input.value}, ${state2Input.value}, ${pincode2Input.value} `
+      let base64Photo = "";
+      if (photoInput.files.length > 0) {
+        base64Photo = await toBase64(photoInput.files[0]);
+      }
+
+      displayDiv.innerHTML=""
+      displayDiv.innerHTML=`
+      <h1 style align="center">Application Details </h1> <br>
+      <h3>Name: </h3> <p>${nameInput.value}</p><br>
+      <h3>Father Name: </h3><p>${fatherNameInput.value}</p><br>
+      <h3>Email: </h3><p>${emailInput.value}</p><br>
+      <h3>Date of Birth: </h3><p>${dobInput.value}</p><br>
+      <h3>Phone: </h3><p>${phoneInput.value}</p><br>
+      <h3>Present Address: </h3><p>${PresentAddress}</p><br>
+      <h3>Permanent Address: </h3><p>${permanentAddress}</p><br>
+      <h3>Photo: </h3><p>${`<img src = "${base64Photo}" alt="photo" height="80px">`}</p><br>
+      <Button onclick="newUser()">Reset</Button>
+      `
 
     }
+    else{
+      validateName() ; validateFatherName() ; validateEmail() ; validateDOB() ; validatePhone() ; validateAddress() ; validateAddress2() ; validateCity1() ; validateCity2() ; validatestate1() ; validatestate2() ; validatePincode() ; validatePincode2() ; validatePhoto()
+      event.preventDefault();
+    }
+}
+
+function toBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = (error) => reject(error);
+  });
+}
+
+function newUser(){
+  displayDiv.style.display="none"
+  document.getElementById("form").style.display="flex"
+  document.getElementById("form").reset();
 }

@@ -9,10 +9,9 @@
 </head>
 
 <body>
-    <h1>Submit Your Application</h1>
 
-    <form action="" onsubmit="validateForm()">
-        <!-- <fieldset> -->
+    <form id="form" onsubmit="validateForm(event)">
+        <h2>Submit Your Application</h2>
         <legend style="font-size: 20px; font-weight: 549;">Personal Information</legend>
         <div class="name">
             <div class="myname">
@@ -80,11 +79,15 @@
         <div class="photo">
             <label for="photo">Upload Profile Photo</label><span>*</span><p style="display: inline;">(jpg/png format only)</p> <br>
             <p>Please upload a photo of yourself. Your face should be clearly visible. Make sure the image size does not exceed 500KB.</p>
-            <input type="file" accept="image/jpg,png" id="photo" placeholder="Upload Photo" onblur="validatePhoto()"> <span id="fileError" class="error"></span>
+            <input type="file" accept=".jpg, .png" id="photo" placeholder="Upload Photo" onblur="validatePhoto()"> <span id="fileError" class="error"></span>
         </div>
         <button type="submit">Submit</button>
     </form>
-    <!-- </fieldset> -->
+
+    <div id="display">
+
+    </div>
+
     <script src="./script.js"></script>
 </body>
 
